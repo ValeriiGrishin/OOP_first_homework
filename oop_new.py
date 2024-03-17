@@ -36,11 +36,11 @@ class Student:
 # Проверка сравнения студентов
     def __lt__(self, other):
         if not isinstance(other, Student) or other.average_grades == 0:
-            return f'Один из участников сравнения не является студентом курса {self.average_course} или еще не был оценен проверяющим'
+            return f'Второй участник сравнения не является студентом курса {self.average_course} или еще не был оценен проверяющим'
         return self.average_grades < other.average_grades
     def __gt__(self, other):
         if not isinstance(other, Student) or other.average_grades == 0:
-            return f'Один из участников сравнения не является студентом курса {self.average_course} или еще не был оценен проверяющим'
+            return f'Второй участник сравнения не является студентом курса {self.average_course} или еще не был оценен проверяющим'
         return self.average_grades > other.average_grades
 class Mentor:
     def __init__(self, name, surname):
@@ -69,11 +69,11 @@ class Lecturer(Mentor):
 # Проверка сравнения лекторов   
     def __lt__(self, other):
         if not isinstance(other, Lecturer) or other.average_grades == 0:
-            return f'Один из участников сравнения не является лектором курса {self.average_course} или еще не был оценен студентами'
+            return f'Второй участник сравнения не является лектором курса {self.average_course} или еще не был оценен студентами'
         return self.average_grades < other.average_grades
     def __gt__(self, other):
         if not isinstance(other, Lecturer) or other.average_grades == 0:
-            return f'Один из участников сравнения не является лектором курса {self.average_course} или еще не был оценен студентами'
+            return f'Второй участник сравнения не является лектором курса {self.average_course} или еще не был оценен студентами'
         return self.average_grades > other.average_grades
 # Ментор с функией оценки студента    
 class Reviewer(Mentor):
